@@ -18,7 +18,7 @@ RUN npm i --force
 
 
 # Set environment variables
-ENV REACT_APP_BANK_API_URL= http://158.220.117.174:8000/
+ENV REACT_APP_BANK_API_URL=http://158.220.117.174:8000/
 COPY package.json ./
 RUN npm run build -- --env REACT_APP_BANK_API_URL=$REACT_APP_BANK_API_URL
 
