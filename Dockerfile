@@ -13,7 +13,7 @@ COPY . .
 ARG ENVIRONMENT
 
 # Install production dependencies
-RUN npm i --force
+RUN npm i 
 # Build the application
 
 
@@ -27,9 +27,9 @@ FROM nginx:alpine
 COPY default.conf /etc/nginx/conf.d/default.conf
 
 # Copy the built static files from the builder stage
-COPY --from=builder /app/dist /usr/share/nginx/html
+COPY --from=builder /app/build /usr/share/nginx/html
 
-# Expose port 80 to the outside world
+# Expose port 5437 to the outside world
 EXPOSE 5437
 
 # Start Nginx server
